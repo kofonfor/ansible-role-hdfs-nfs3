@@ -1,0 +1,7 @@
+- name: put {{ hadoop_distr_prefix }}/bin/nfs3_start.sh
+  template: src=nfs3_start.sh dest={{ hadoop_distr_prefix }}/bin/nfs3_start.sh
+  when: "ansible_os_family == 'Elbrus'"
+
+- name: chmod {{ hadoop_distr_prefix }}/bin/nfs3_start.sh
+  shell: chmod 0755 {{ hadoop_distr_prefix }}/bin/nfs3_start.sh
+  when: "ansible_os_family == 'Elbrus'"
